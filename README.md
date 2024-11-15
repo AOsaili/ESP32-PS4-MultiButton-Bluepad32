@@ -29,6 +29,18 @@ This project leverages the ESP32-Bluepad32 library to enable seamless integratio
 2. Pair the PS4 controller to your ESP32.
 3. Monitor the Serial output to see button events, joystick values, and battery feedback.
 
+### Joystick Calibration
+
+You can adjust the joystick calibration by modifying the offset values in the following lines of code:
+
+    // Handle Axis (Joystick) with calibration
+    int currentLeftJoystickX = ctl->axisX() - 4;
+    int currentLeftJoystickY = ctl->axisY() - 4;
+    int currentRightJoystickX = ctl->axisRX() - 4;
+    int currentRightJoystickY = ctl->axisRY() - 4;
+
+Adjusting these values allows you to fine-tune the joystick’s neutral center for more precise control in your applications.
+
 ## Contribution
 Contributions are welcome! Please refer to the [CONTRIBUTING.md](CONTRIBUTING.md) file.
 
